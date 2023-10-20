@@ -1,13 +1,13 @@
-package com.bliss.demoapp;
+package com.bliss.blissapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoappApplication {
+public class BlissApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoappApplication.class, args);
+		SpringApplication.run(BlissApplication.class, args);
 	}
 
 }
