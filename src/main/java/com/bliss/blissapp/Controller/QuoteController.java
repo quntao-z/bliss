@@ -2,6 +2,8 @@ package com.bliss.blissapp.Controller;
 
 import com.bliss.blissapp.Model.Quote;
 import com.bliss.blissapp.Service.QuoteService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/quote")
+@CrossOrigin
 public class QuoteController {
     private QuoteService quoteService;
 

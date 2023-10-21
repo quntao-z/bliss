@@ -3,7 +3,6 @@ package com.bliss.blissapp.Service;
 import com.bliss.blissapp.Model.Quote;
 import com.bliss.blissapp.Repository.QuoteRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
