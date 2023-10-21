@@ -1,7 +1,7 @@
 package com.bliss.blissapp.Controller;
 
 import com.bliss.blissapp.Model.Quote;
-import com.bliss.blissapp.Repository.QuoteRepository;
+import com.bliss.blissapp.Service.QuoteService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,22 +13,21 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/quote")
 public class QuoteController {
-    private final QuoteRepository quoteRepository;
+    private QuoteService quoteService;
 
-    public QuoteController(QuoteRepository quoteRepository){
-        this.quoteRepository = quoteRepository;
+    public QuoteController(QuoteService quoteService){
+        this.quoteService = quoteService;
     }
 
     @GetMapping("/all")
     public List<Quote> getAllQuotes(){
-        return quoteRepository.findAll();
+        return quoteService.getAllQuotes();
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Quote> getQuoteById(@PathVariable Long id){
-        return quoteRepository.findById(id);
+        return quoteService.getQuoteById(id);
     }
-
 
 
 }
