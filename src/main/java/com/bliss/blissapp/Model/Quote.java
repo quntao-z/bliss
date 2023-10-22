@@ -1,9 +1,6 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -12,6 +9,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Getter
 @Setter
+@Table(name = "quote")
 public class Quote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
