@@ -1,22 +1,21 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Entity
 @RequiredArgsConstructor
 @Getter
 @Setter
-@Table(name = "user_comments")
+@Document(collection = "comments")
 public class Comments {
     @Id
     private Long Id;
-    @Column(columnDefinition = "TEXT")
     private String text;
-    private String author;
+    private User author;
     private LocalDateTime dateTime;
 }

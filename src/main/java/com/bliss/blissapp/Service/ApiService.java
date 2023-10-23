@@ -24,6 +24,5 @@ public class ApiService {
         for (Quote quote : quotes) {
             quoteRepository.save(quote);
         }
-
     }
 }
