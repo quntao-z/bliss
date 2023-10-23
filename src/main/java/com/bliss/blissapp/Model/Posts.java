@@ -1,22 +1,18 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @RequiredArgsConstructor
 @Getter
 @Setter
-@Table(name = "Posts")
+@Document(collection = "posts")
 public class Posts {
     @Id
     private Long id;
-    @ManyToOne
-    private User author;
-    @Column(columnDefinition = "TEXT")
+    private String author;
     private String text;
 }

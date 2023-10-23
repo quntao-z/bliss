@@ -1,19 +1,19 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @RequiredArgsConstructor
 @Getter
 @Setter
-@Table(name = "quote")
+@Document(collection = "quotes")
 public class Quote {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private ObjectId id;
 
     private String q; // Quote text
     private String a; // Author

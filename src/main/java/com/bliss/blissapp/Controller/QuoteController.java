@@ -7,7 +7,6 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin
 @RequestMapping("/quote")
 @CrossOrigin
 public class QuoteController {

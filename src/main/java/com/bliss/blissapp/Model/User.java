@@ -1,17 +1,18 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.persistence.*;
+import jakarta.annotation.Generated;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
 @RequiredArgsConstructor
 @Getter
 @Setter
-@Table(name = "app_user")
+@Document(collection = "users")
 public class User {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
     private String name;
 
