@@ -1,15 +1,15 @@
 package com.bliss.blissapp.Controller;
-
 import com.bliss.blissapp.Model.Quote;
 import com.bliss.blissapp.Service.QuoteService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
+
 
 @RestController
 @CrossOrigin
 @RequestMapping("/quote")
+@CrossOrigin
 public class QuoteController {
     private QuoteService quoteService;
 
