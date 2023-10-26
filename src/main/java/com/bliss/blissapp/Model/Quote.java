@@ -1,20 +1,21 @@
 package com.bliss.blissapp.Model;
 
+import jakarta.annotation.Generated;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @RequiredArgsConstructor
 @Getter
 @Setter
 @Document(collection = "quotes")
 public class Quote {
-    @Id
-    private ObjectId id;
-
+    @MongoId
+    private String id;
     private String q; // Quote text
     private String a; // Author
     private String c; // Character count
