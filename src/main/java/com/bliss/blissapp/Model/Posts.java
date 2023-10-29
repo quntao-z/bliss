@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "posts")
 public class Posts {
     @Id
-    private Long id;
+    private Object id;
     private String author;
     private String text;
 }

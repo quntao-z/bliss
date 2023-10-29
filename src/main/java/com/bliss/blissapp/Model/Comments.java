@@ -17,5 +17,6 @@ public class Comments {
     private Long Id;
     private String text;
     private User author;
+    private Posts post;
     private LocalDateTime dateTime;
 }
