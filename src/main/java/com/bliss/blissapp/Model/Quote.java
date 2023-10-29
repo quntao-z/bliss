@@ -1,13 +1,10 @@
 package com.bliss.blissapp.Model;
 
-import jakarta.annotation.Generated;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @RequiredArgsConstructor
 @Getter
