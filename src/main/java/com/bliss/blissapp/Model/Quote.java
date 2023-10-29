@@ -14,8 +14,8 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Setter
 @Document(collection = "quotes")
 public class Quote {
-    @MongoId
-    private String id;
+    @Id
+    private int id;
     private String q; // Quote text
     private String a; // Author
     private String c; // Character count

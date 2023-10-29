@@ -10,19 +10,23 @@ import org.springframework.web.client.RestTemplate;
 public class ApiService {
     private final QuoteRepository quoteRepository;
     private final RestTemplate restTemplate;
+    private final NextSequenceService nextSequenceService;
 
-    public ApiService(QuoteRepository quoteRepository, RestTemplate restTemplate) {
+    public ApiService(QuoteRepository quoteRepository, RestTemplate restTemplate, NextSequenceService nextSequenceService) {
         this.quoteRepository = quoteRepository;
         this.restTemplate = restTemplate;
+        this.nextSequenceService = nextSequenceService;
     }
 
     @PostConstruct
     public void fetchDataAndSaveToDB() {
         String url = "https://zenquotes.io/api/quotes";
-
-        Quote[] quotes = restTemplate.getForObject(url, Quote[].class);
-        for (Quote quote : quotes) {
-            quoteRepository.save(quote);
+        if (quoteRepository.findAll().isEmpty()) {
+            Quote[] quotes = restTemplate.getForObject(url, Quote[].class);
+            for (Quote quote : quotes) {
+                quote.setId(nextSequenceService.getNextSequence("customSequences"));
+                quoteRepository.save(quote);
+            }
         }
     }
 }
