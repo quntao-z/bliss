@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 @Document(collection = "comments")
 public class Comments {
     @Id
-    private Long Id;
+    private int id;
     private String text;
-    private User author;
-    private Posts post;
-    private LocalDateTime dateTime;
+    private String author;
+    private int postId;
+    private String time;
 }
