@@ -10,5 +10,4 @@ import java.util.Optional;
 
 @Repository
 public interface CommentsRepository extends MongoRepository<Comments, Long> {
-    List<Comments> findByPost(Optional<Posts> post);
 }

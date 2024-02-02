@@ -1,5 +1,6 @@
 package com.bliss.blissapp.Service;
 
+import com.bliss.blissapp.Model.Comments;
 import com.bliss.blissapp.Model.Posts;
 import com.bliss.blissapp.Repository.PostsRepository;
 import org.springframework.stereotype.Service;
