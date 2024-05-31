@@ -3,20 +3,16 @@ package com.bliss.blissapp.Service;
 import com.bliss.blissapp.Model.Quote;
 import com.bliss.blissapp.Repository.QuoteRepository;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@RequiredArgsConstructor
 public class ApiService {
     private final QuoteRepository quoteRepository;
     private final RestTemplate restTemplate;
     private final NextSequenceService nextSequenceService;
-
-    public ApiService(QuoteRepository quoteRepository, RestTemplate restTemplate, NextSequenceService nextSequenceService) {
-        this.quoteRepository = quoteRepository;
-        this.restTemplate = restTemplate;
-        this.nextSequenceService = nextSequenceService;
-    }
 
     @PostConstruct
     public void fetchDataAndSaveToDB() {

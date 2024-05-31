@@ -15,7 +15,7 @@ import org.springframework.data.mongodb.core.query.Query;
 public class CommentsService {
     @Autowired
     private MongoTemplate mongoTemplate;
-    private CommentsRepository commentsRepository;
+    private final CommentsRepository commentsRepository;
 
     public CommentsService(CommentsRepository commentsRepository) {
         this.commentsRepository = commentsRepository;

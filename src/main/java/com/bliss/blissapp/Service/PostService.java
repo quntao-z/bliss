@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Service
 public class PostService {
-    private PostsRepository postsRepository;
+    private final PostsRepository postsRepository;
 
     public PostService(PostsRepository postsRepository){
         this.postsRepository = postsRepository;
