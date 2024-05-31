@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @CrossOrigin
 public class CommentsController {
-    private CommentsService commentsService;
+    private final CommentsService commentsService;
     private final NextSequenceService nextSequenceService;
 
     @Autowired
@@ -46,5 +46,4 @@ public class CommentsController {
     public void deleteCommentById(Long id) {
         commentsService.deleteCommentById(id);
     }
-
 }
