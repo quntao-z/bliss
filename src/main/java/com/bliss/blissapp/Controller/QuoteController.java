@@ -7,7 +7,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/quote")
+@RequestMapping("/api/quotes")
 @CrossOrigin
 public class QuoteController {
     private QuoteService quoteService;
