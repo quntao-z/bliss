@@ -3,6 +3,7 @@ package com.bliss.blissapp.Controller;
 import com.bliss.blissapp.Model.Posts;
 import com.bliss.blissapp.Service.NextSequenceService;
 import com.bliss.blissapp.Service.PostService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,16 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
+@RequiredArgsConstructor
 @CrossOrigin
 public class PostsController {
-    private PostService postService;
-    private NextSequenceService nextSequenceService;
-
-    @Autowired
-    public PostsController(PostService postService, NextSequenceService nextSequenceService){
-        this.postService = postService;
-        this.nextSequenceService = nextSequenceService;
-    }
+    private final PostService postService;
+    private final NextSequenceService nextSequenceService;
 
     @GetMapping("/all")
     public List<Posts> getAllPosts(){
