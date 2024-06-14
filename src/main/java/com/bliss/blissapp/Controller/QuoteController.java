@@ -8,8 +8,8 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/quote")
 @RequiredArgsConstructor
+@RequestMapping("/api/quotes")
 @CrossOrigin
 public class QuoteController {
     private final QuoteService quoteService;
