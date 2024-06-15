@@ -5,6 +5,7 @@ import com.bliss.blissapp.Model.Posts;
 import com.bliss.blissapp.Service.CommentsService;
 import com.bliss.blissapp.Service.NextSequenceService;
 import com.bliss.blissapp.Service.PostService;
+import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +16,11 @@ import java.util.Optional;
 
 @RequestMapping("/comments")
 @RestController
+@RequiredArgsConstructor
 @CrossOrigin
 public class CommentsController {
     private final CommentsService commentsService;
     private final NextSequenceService nextSequenceService;
-
-    @Autowired
-    public CommentsController(CommentsService commentsService, NextSequenceService nextSequenceService){
-        this.commentsService = commentsService;
-        this.nextSequenceService = nextSequenceService;
-    }
 
     @PostMapping("/")
     public void createComment(@RequestBody Comments comment){

@@ -18,11 +18,4 @@ public class Quote {
     private String c; // Character count
     private String h; // HTML representation
 
-    public Quote(String q, String a, String c, String h) {
-        this.q = q;
-        this.a = a;
-        this.c = c;
-        this.h = h;
-    }
-
 }

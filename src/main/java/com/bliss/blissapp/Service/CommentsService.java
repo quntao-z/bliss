@@ -1,9 +1,8 @@
 package com.bliss.blissapp.Service;
 
 import com.bliss.blissapp.Model.Comments;
-import com.bliss.blissapp.Model.Posts;
 import com.bliss.blissapp.Repository.CommentsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -12,14 +11,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 @Service
+@RequiredArgsConstructor
 public class CommentsService {
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    private final MongoTemplate mongoTemplate;
     private final CommentsRepository commentsRepository;
-
-    public CommentsService(CommentsRepository commentsRepository) {
-        this.commentsRepository = commentsRepository;
-    }
 
     public Optional<Comments> getCommentById(Long id) {
         return commentsRepository.findById(id);
