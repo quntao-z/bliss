@@ -18,10 +18,11 @@ public class QuoteService {
         return quoteRepository.findAll();
     }
 
+    public void createQuote(Quote quote) {
+        quoteRepository.save(quote);
+    }
+
     public Optional<Quote> getQuoteById(@PathVariable Long id){
         return quoteRepository.findById(id);
     }
-
-
-
 }
