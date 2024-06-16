@@ -13,9 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Quote {
     @Id
     private Object id;
-    private String q; // Quote text
-    private String a; // Author
-    private String c; // Character count
-    private String h; // HTML representation
-
+    private String quote;
+    private String author; 
+    private String html; 
 }

@@ -3,7 +3,6 @@ package com.bliss.blissapp.Controller;
 import com.bliss.blissapp.Model.Comments;
 import com.bliss.blissapp.Model.Posts;
 import com.bliss.blissapp.Service.CommentsService;
-import com.bliss.blissapp.Service.NextSequenceService;
 import com.bliss.blissapp.Service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.checkerframework.checker.units.qual.C;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.xml.stream.events.Comment;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @RequestMapping("/comments")
 @RestController
@@ -20,11 +20,10 @@ import java.util.Optional;
 @CrossOrigin
 public class CommentsController {
     private final CommentsService commentsService;
-    private final NextSequenceService nextSequenceService;
 
     @PostMapping("/")
     public void createComment(@RequestBody Comments comment){
-        comment.setId(nextSequenceService.getNextSequence("customSequences"));
+        comment.setId(UUID.randomUUID());
         commentsService.createComment(comment);
     }
 
