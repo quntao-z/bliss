@@ -30,7 +30,6 @@ public class AuthenticationService {
 
         var user = User.builder()
                 .id(UUID.randomUUID().toString())
-                .name(request.getName())
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
