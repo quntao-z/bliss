@@ -1,13 +1,13 @@
 package com.bliss.blissapp.Controller;
 
 import com.bliss.blissapp.Model.Posts;
-import com.bliss.blissapp.Service.NextSequenceService;
 import com.bliss.blissapp.Service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/posts")
@@ -15,7 +15,6 @@ import java.util.List;
 @CrossOrigin
 public class PostsController {
     private final PostService postService;
-    private final NextSequenceService nextSequenceService;
 
     @GetMapping("/all")
     public List<Posts> getAllPosts(){
@@ -24,7 +23,7 @@ public class PostsController {
 
     @PostMapping("/")
     public void createPost(@RequestBody Posts post){
-        post.setId(nextSequenceService.getNextSequence("customSequences"));
+        post.setId(UUID.randomUUID());
         postService.createPost(post);
     }
 

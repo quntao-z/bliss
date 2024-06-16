@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @Getter
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Document(collection = "comments")
 public class Comments {
     @Id
-    private int id;
+    private UUID id;
     private String text;
     private String author;
     private int postId;

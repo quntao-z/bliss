@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 @Getter
@@ -15,7 +16,7 @@ import java.util.Date;
 @Document(collection = "posts")
 public class Posts {
     @Id
-    private int id;
+    private UUID id;
     private String author;
     private String text;
     private String postDate;
