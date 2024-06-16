@@ -14,6 +14,5 @@ public class Quote {
     @Id
     private Object id;
     private String quote;
-    private String author; 
-    private String html; 
+    private String author;
 }
