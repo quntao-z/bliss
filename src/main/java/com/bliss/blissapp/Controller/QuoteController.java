@@ -22,7 +22,7 @@ public class QuoteController {
         return quoteService.getAllQuotes();
     }
 
-    @GetMapping("/")
+    @PostMapping("/")
     public void createQuote(@RequestBody Quote quote) {
         quote.setId(nextSequenceService.getNextSequence("customSequences"));
         quoteService.createQuote(quote);
