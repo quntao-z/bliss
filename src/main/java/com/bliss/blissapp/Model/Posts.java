@@ -1,13 +1,9 @@
 package com.bliss.blissapp.Model;
-
-import lombok.Data;
 import org.springframework.data.annotation.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.Date;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -17,7 +13,7 @@ import java.util.UUID;
 public class Posts {
     @Id
     private UUID id;
-    private String author;
+    private User author;
     private String text;
     private String postDate;
 }
